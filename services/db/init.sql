@@ -1,0 +1,2 @@
+-- Placeholder init; Flask will create table if missing.
+-- You can add seed data here if needed.
