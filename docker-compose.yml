@@ -11,25 +11,11 @@ services:
       - db
     labels:
       - "traefik.enable=true"
-<<<<<<< Updated upstream
-=======
-      # # HTTP -> redirect to HTTPS
-      # - "traefik.http.routers.app.rule=Host(`${DOMAIN}`)"
-      # - "traefik.http.routers.app.entrypoints=web"
-      # - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      # - "traefik.http.routers.app.middlewares=redirect-to-https"
->>>>>>> Stashed changes
       # HTTPS router
       - "traefik.http.routers.app-secure.rule=Host(`myapp.${DOMAIN}`)"
       - "traefik.http.routers.app-secure.entrypoints=websecure"
-<<<<<<< Updated upstream
       - "traefik.http.routers.app-secure.tls=true"
-      - "traefik.http.routers.app-secure.tls.certresolver=myresolver"
-=======
-      # - "traefik.http.routers.app-secure.tls=true"
       - "traefik.http.routers.app-secure.tls.certresolver=mytlschallenge"
-      # Point Traefik to the app's internal port
->>>>>>> Stashed changes
       - "traefik.http.services.app-secure.loadbalancer.server.port=8000"
     restart: unless-stopped
     networks:
@@ -58,10 +44,6 @@ services:
       - "--api.dashboard=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
-<<<<<<< Updated upstream
-=======
-      # - "--entrypoints.web.address=:80"
->>>>>>> Stashed changes
       - "--entrypoints.websecure.address=:443"
       - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
       - "--certificatesresolvers.myresolver.acme.email=${ACME_EMAIL}"
@@ -88,7 +70,3 @@ volumes:
 
 networks:
   appnet:
-<<<<<<< Updated upstream
-    driver: bridge
-=======
->>>>>>> Stashed changes
