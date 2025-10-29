@@ -38,6 +38,6 @@ docker compose push
 - Check logs:
   ```bash
   docker compose logs -f traefik
-  docker compose logs -f app
-  docker compose logs -f db
+  docker compose logs -f simple-web-db-traefik-app-1
+  docker compose logs -f simple-web-db-traefik-db-1
   ```
