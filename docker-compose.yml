@@ -11,15 +11,10 @@ services:
       - db
     labels:
       - "traefik.enable=true"
-      # HTTP -> redirect to HTTPS
-      - "traefik.http.routers.app.rule=Host(`${DOMAIN}`)"
-      - "traefik.http.routers.app.entrypoints=web"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      - "traefik.http.routers.app.middlewares=redirect-to-https"
       # HTTPS router
       - "traefik.http.routers.app-secure.rule=Host(`myapp.${DOMAIN}`)"
       - "traefik.http.routers.app-secure.entrypoints=websecure"
-      # - "traefik.http.routers.app-secure.tls=true"
+      - "traefik.http.routers.app-secure.tls=true"
       - "traefik.http.routers.app-secure.tls.certresolver=mytlschallenge"
       # Point Traefik to the app's internal port
       - "traefik.http.services.app-secure.loadbalancer.server.port=8000"
@@ -50,7 +45,6 @@ services:
       - "--api.dashboard=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
       - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
       - "--certificatesresolvers.myresolver.acme.email=${ACME_EMAIL}"
