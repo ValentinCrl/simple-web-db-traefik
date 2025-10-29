@@ -1,5 +1,5 @@
 # Simple Flask app
-FROM python:3.12-slim
+FROM python:3.12-slim AS app
 
 # Avoid python buffering
 ENV PYTHONUNBUFFERED=1
