@@ -15,7 +15,7 @@ services:
       - "traefik.http.routers.app-secure.rule=Host(`myapp.${DOMAIN}`)"
       - "traefik.http.routers.app-secure.entrypoints=websecure"
       - "traefik.http.routers.app-secure.tls=true"
-      - "traefik.http.routers.app-secure.tls.certresolver=mytlschallenge"
+      - "traefik.http.routers.app-secure.tls.certresolver=myresolver"
       - "traefik.http.services.app-secure.loadbalancer.server.port=8000"
     restart: unless-stopped
     networks:
