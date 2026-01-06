@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: web-app
-          image: valentincrl/simple-web-db-traefik:latest
+          image: valentincar/simple-app:amd64
           ports:
             - containerPort: 5000
           env:
