@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+  namespace: simple-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+        - name: web-app
+          image: valentincrl/simple-web-db-traefik:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DATABASE_HOST
+              value: postgres
+            - name: DATABASE_NAME
+              value: appdb
+            - name: DATABASE_USER
+              value: appuser
+            - name: DATABASE_PASSWORD
+              value: apppassword
