@@ -13,11 +13,13 @@ spec:
       labels:
         app: web-app
     spec:
+      nodeSelector:
+        role: worker
       containers:
         - name: web-app
           image: valentincar/simple-app:amd64
           ports:
-            - containerPort: 5000
+            - containerPort: 8000
           env:
             - name: DATABASE_HOST
               value: postgres
@@ -26,4 +28,6 @@ spec:
             - name: DATABASE_USER
               value: appuser
             - name: DATABASE_PASSWORD
-              value: apppassword
+              value: apppass
+            - name: DB_PORT
+              value: "5432"
