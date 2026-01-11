@@ -1,6 +1,6 @@
-# Déploiement d'une application sur un ckuster non-managé avec un Ingress et un LoadBalancer
+# Déploiement d'une application sur un cluster auto-hébergé avec un Ingress et un LoadBalancer
 
-Ce projet démontre le déploiement complet d’une application web conteneurisée avec base de données PostgreSQL sur un cluster Kubernetes auto-hébergé, exposée publiquement via un Ingress Traefik derrière un LoadBalancer Hetzner, avec chiffrement HTTPS automatique grâce à Let’s Encrypt.
+Ce projet montre le déploiement complet d’une application web conteneurisée avec une base de données PostgreSQL sur un cluster Kubernetes auto-hébergé, exposée publiquement via un Ingress Traefik derrière un LoadBalancer Hetzner, avec chiffrement HTTPS automatique grâce à Let’s Encrypt.
 
 ---
 
