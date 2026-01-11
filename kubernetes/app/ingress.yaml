@@ -14,7 +14,7 @@ spec:
         - myapp.valdibien.ovh
       secretName: web-app-tls
   rules:
-    - host: app.valdibien.ovh
+    - host: myapp.valdibien.ovh
       http:
         paths:
           - path: /
