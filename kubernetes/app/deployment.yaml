@@ -28,6 +28,6 @@ spec:
             - name: DATABASE_USER
               value: appuser
             - name: DATABASE_PASSWORD
-              value: apppass
+              value: apppassword
             - name: DB_PORT
               value: "5432"
