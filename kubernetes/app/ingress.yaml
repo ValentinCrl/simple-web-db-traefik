@@ -11,7 +11,7 @@ spec:
   ingressClassName: traefik
   tls:
     - hosts:
-        - app.valdibien.ovh
+        - myapp.valdibien.ovh
       secretName: web-app-tls
   rules:
     - host: app.valdibien.ovh
