@@ -1,4 +1,4 @@
-# Simple Web App on Kubernetes — Production Ready Deployment
+# Déploiement d'une application sur un ckuster non-managé avec un Ingress et un LoadBalancer
 
 Ce projet démontre le déploiement complet d’une application web conteneurisée avec base de données PostgreSQL sur un cluster Kubernetes auto-hébergé, exposée publiquement via un Ingress Traefik derrière un LoadBalancer Hetzner, avec chiffrement HTTPS automatique grâce à Let’s Encrypt.
 
@@ -12,7 +12,6 @@ Ce projet démontre le déploiement complet d’une application web conteneuris�
 * Utiliser un LoadBalancer managé Hetzner
 * Configurer un nom de domaine OVH
 * Activer HTTPS automatique avec cert-manager + Let’s Encrypt
-* Déployer l’infrastructure **as-code**
 
 ---
 
@@ -51,34 +50,6 @@ PostgreSQL
 | Base de données    | PostgreSQL                   |
 | Conteneurs         | Docker                       |
 | DNS                | OVH                          |
-
----
-
-## 📁 Arborescence du projet
-
-```
-simple-web-db-traefik/
-├── app/
-│   ├── app.py
-│   ├── requirements.txt
-│   └── Dockerfile
-├── db/
-│   └── Dockerfile
-├── kubernetes/
-│   ├── app/
-│   │   ├── deployment.yaml
-│   │   ├── service.yaml
-│   │   └── ingress.yaml
-│   ├── db/
-│   │   └── deployment.yaml
-│   └── infra/
-│       ├── traefik.yaml
-│       └── cluster-issuer.yaml
-├── Kubernetes/
-│   └── cluster/
-│       └── kubeadm-install.sh
-└── README.md
-```
 
 ---
 
