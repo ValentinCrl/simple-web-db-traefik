@@ -2,13 +2,8 @@ import os
 import psycopg2
 from flask import Flask
 
-DB_HOST = os.environ.get("DATABASE_HOST", "postgres")
-DB_NAME = os.environ.get("DATABASE_NAME", "appdb")
-DB_USER = os.environ.get("DATABASE_USER", "appuser")
-DB_PASSWORD = os.environ.get("DATABASE_PASSWORD", "apppassword")
-DB_PORT = os.environ.get("DB_PORT", "5432")
+DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://appuser:apppassword@postgres:5432/appdb")
 
-DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 app = Flask(__name__)
 
 def get_conn():
