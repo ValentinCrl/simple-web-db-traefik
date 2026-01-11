@@ -2,7 +2,7 @@ import os
 import psycopg2
 from flask import Flask
 
-DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://appuser:apppass@db:5432/appdb")
+DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://appuser:apppassword@postgres:5432/appdb")
 
 app = Flask(__name__)
 
