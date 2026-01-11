@@ -6,7 +6,13 @@ metadata:
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls.certresolver: le
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - app.valdibien.ovh
+      secretName: web-app-tls
   rules:
     - host: app.valdibien.ovh
       http:
