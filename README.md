@@ -6,7 +6,6 @@ Ce projet montre le déploiement complet d’une application web conteneurisée 
 
 ## 🎯 Objectifs du projet
 
-* Conteneuriser une application web Flask + PostgreSQL
 * Déployer l’application sur un cluster Kubernetes (kubeadm)
 * Exposer l’application publiquement avec Traefik Ingress Controller
 * Utiliser un LoadBalancer managé Hetzner
