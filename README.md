@@ -47,7 +47,6 @@ PostgreSQL
 | Certificats TLS    | cert-manager + Let’s Encrypt |
 | Application        | Flask + Gunicorn             |
 | Base de données    | PostgreSQL                   |
-| Conteneurs         | Docker                       |
 | DNS                | OVH                          |
 
 ---
