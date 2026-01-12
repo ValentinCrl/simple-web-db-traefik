@@ -201,6 +201,4 @@ Déploiement Kubernetes complet avec cloud Hetzner & Traefik.
 
 ---
 
-## 📜 Licence
 
-MIT
